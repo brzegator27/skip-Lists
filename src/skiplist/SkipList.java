@@ -113,30 +113,29 @@ public class SkipList {
     }
 
     public Integer get(Integer key) {
-
+        return getNodeByKey(key).key;
     }
 
     Node getNodeByKey(Integer key) {
         Node currentNode = mandrel;
 
-        //        Till we don't reach the last predecessor
-        while(currentLevel != 0 || (currentNode.right != null && currentNode.right.compareTo(newNode) == -1)) {
-//            If (...) then we go down the skip list
-            if(currentNode.right == null || currentNode.right.compareTo(newNode) == 1) {
-                if(currentLevel <= newNodeMaxLevel) {
-                    insertNode(currentNode, newNode, upperNewNode, null);
-                }
+        while(currentNode != null) {
+            if(currentNode.key != null && currentNode.key.compareTo(key) == 0) {
+                return currentNode;
+            }
 
-                upperNewNode = newNode;
-                newNode = new Node(key);
-
-                currentNode = currentNode.down;
-                currentLevel--;
-            } else {
+            if(currentNode.right.key != null && currentNode.right.key.compareTo(key) != 1) {
                 currentNode = currentNode.right;
+            } else {
+                currentNode = currentNode.down;
             }
         }
+
+        return currentNode;
     }
+
+    
+
 
     @Override
     public String toString() {

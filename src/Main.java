@@ -21,17 +21,18 @@ public class Main {
 //        System.out.println(randGenerator.nextInt(2));
 
         SkipList skipList1 = new SkipList();
-        System.out.println(skipList1);
+//        System.out.println(skipList1);
         skipList1.add(1);
-        System.out.println(skipList1);
+//        System.out.println(skipList1);
         skipList1.add(2);
-        System.out.println(skipList1);
+//        System.out.println(skipList1);
         skipList1.add(4);
-        System.out.println(skipList1);
+//        System.out.println(skipList1);
         skipList1.add(3);
-        System.out.println(skipList1);
+//        System.out.println(skipList1);
         skipList1.add(10);
         System.out.println(skipList1);
+
 
 //        for(int i = 0; i < 50; i++) {
 //            skipList1.add(randGenerator.nextInt(100));
