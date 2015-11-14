@@ -45,9 +45,8 @@ public class Main {
         System.out.println(skipList1.higherKey(10));
 
 
-//        for(int i = 0; i < 50; i++) {
-//            skipList1.add(randGenerator.nextInt(100));
-//        }
-//        System.out.println(skipList1);
+        for(Integer nodeKey : skipList1) {
+            System.out.println(nodeKey + ", ");
+        }
     }
 }

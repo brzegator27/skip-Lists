@@ -1,11 +1,12 @@
 package skiplist;
 
+import java.util.Iterator;
 import java.util.Random;
 
 /**
  * Created by Jakub on 2015-11-13.
  */
-public class SkipList {
+public class SkipList implements Iterable<Integer> {
     Node mandrel;
     final Node lowestMandrel;
 
@@ -217,5 +218,10 @@ public class SkipList {
         }
 
         return rowAsString;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new SkipListIterator(lowestMandrel);
     }
 }
