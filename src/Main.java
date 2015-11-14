@@ -33,6 +33,17 @@ public class Main {
         skipList1.add(10);
         System.out.println(skipList1);
 
+        System.out.println(skipList1.lowerKey(1));
+        System.out.println(skipList1.lowerKey(2));
+        System.out.println(skipList1.lowerKey(3));
+        System.out.println(skipList1.lowerKey(4));
+        System.out.println(skipList1.lowerKey(10));
+        System.out.println(skipList1.higherKey(1));
+        System.out.println(skipList1.higherKey(2));
+        System.out.println(skipList1.higherKey(3));
+        System.out.println(skipList1.higherKey(4));
+        System.out.println(skipList1.higherKey(10));
+
 
 //        for(int i = 0; i < 50; i++) {
 //            skipList1.add(randGenerator.nextInt(100));

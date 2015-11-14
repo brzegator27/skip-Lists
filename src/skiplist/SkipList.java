@@ -26,7 +26,6 @@ public class SkipList {
                 upperNewNode = null,
                 currentNode = mandrel;
 
-        System.out.println(newNodeMaxLevel);
         if(newNodeMaxLevel > level) {
             manageNewMandrel(newNode);
 
@@ -124,7 +123,7 @@ public class SkipList {
                 return currentNode;
             }
 
-            if(currentNode.right.key != null && currentNode.right.key.compareTo(key) != 1) {
+            if(currentNode.right != null && currentNode.right.key != null && currentNode.right.key.compareTo(key) != 1) {
                 currentNode = currentNode.right;
             } else {
                 currentNode = currentNode.down;
@@ -133,8 +132,59 @@ public class SkipList {
 
         return currentNode;
     }
-    
 
+    public Integer higherKey(Integer key) {
+        Node higherNode = higherNode(key);
+        Integer higherNodeKey = higherNode != null ? higherNode.key : null;
+
+        return higherNodeKey;
+    }
+
+    Node higherNode(Integer key) {
+        Node node = getLowestNodeByKey(key);
+
+        while(node != null) {
+            if(node.key.compareTo(key) == 1) {
+                return node;
+            }
+
+            node = node.right;
+        }
+
+        return node;
+    }
+
+    public Integer lowerKey(Integer key) {
+        Node lowerNode = lowerNode(key);
+        Integer lowerNodeKey = lowerNode != null ? lowerNode.key : null;
+
+        return lowerNodeKey;
+    }
+
+    Node lowerNode(Integer key) {
+        Node node = getLowestNodeByKey(key);
+
+        while(node != null && node.key != null) {
+            if(node.key.compareTo(key) == -1) {
+                return node;
+            }
+
+            node = node.left;
+        }
+
+        return node;
+    }
+
+    Node getLowestNodeByKey(Integer key) {
+        Node topNode = getNodeByKey(key),
+                currentNode = topNode;
+
+        while(currentNode.down != null) {
+            currentNode = currentNode.down;
+        }
+
+        return currentNode;
+    }
 
     @Override
     public String toString() {
