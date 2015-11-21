@@ -26,102 +26,71 @@ public class Main {
 
     static SkipListMap skipListMap = new SkipListMap();
     static ConcurrentSkipListMap<Integer, Integer> concurrentSkipListMap = new ConcurrentSkipListMap();
-    static long startTime,
-            endTime,
-            totalTimeConcurrent, totalTimeMyList;
-    static double percentage;
     static ArrayList<Integer> valuesToPut = new ArrayList<>();
+    static PerformanceComparisonTester tester = new PerformanceComparisonTester();
 
     private static void testPut() {
-        System.out.println("Testing put method performance:");
-        startTime = System.currentTimeMillis();
+        System.out.print("Testing put method performance: ");
+
+        tester.testOneStart();
         for(Integer value : valuesToPut) {
             concurrentSkipListMap.put(value, value);
         }
-        endTime   = System.currentTimeMillis();
-        totalTimeConcurrent = endTime - startTime;
+        tester.testOneEnd();
 
-        startTime = System.currentTimeMillis();
+        tester.testTwoStart();
         for(Integer value : valuesToPut) {
             skipListMap.put(value, value);
         }
-        endTime   = System.currentTimeMillis();
-        totalTimeMyList = endTime - startTime;
+        tester.testTwoEnd();
 
-        percentage = totalTimeMyList - totalTimeConcurrent;
-        percentage /= totalTimeMyList;
-        percentage *= 100;
-        System.out.println(totalTimeConcurrent + ", " + totalTimeMyList + " -> " + percentage + "% \n");
+        System.out.println(tester);
     }
 
     private static void testContainsKey() {
-        System.out.println("Testing containsKey method performance:");
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            concurrentSkipListMap.put(value, value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeConcurrent = endTime - startTime;
+        System.out.print("Testing containsKey method performance: ");
 
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            skipListMap.put(value, value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeMyList = endTime - startTime;
+        tester.testOneStart();
+        valuesToPut.forEach(concurrentSkipListMap::containsKey);
+        tester.testOneEnd();
 
-        percentage = totalTimeMyList - totalTimeConcurrent;
-        percentage /= totalTimeMyList;
-        percentage *= 100;
-        System.out.println(totalTimeConcurrent + ", " + totalTimeMyList + " -> " + percentage + "% \n");
+        tester.testTwoStart();
+        valuesToPut.forEach(skipListMap::containsKey);
+        tester.testTwoEnd();
+
+        System.out.println(tester);
     }
 
     private static void testGet() {
-        System.out.println("Testing get method performance:");
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            concurrentSkipListMap.get(value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeConcurrent = endTime - startTime;
+        System.out.print("Testing get method performance: ");
 
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            skipListMap.get(value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeMyList = endTime - startTime;
+        tester.testOneStart();
+        valuesToPut.forEach(concurrentSkipListMap::get);
+        tester.testOneEnd();
 
-        percentage = totalTimeMyList - totalTimeConcurrent;
-        percentage /= totalTimeMyList;
-        percentage *= 100;
-        System.out.println(totalTimeConcurrent + ", " + totalTimeMyList + " -> " + percentage + "% \n");
+        tester.testTwoStart();
+        valuesToPut.forEach(skipListMap::get);
+        tester.testTwoEnd();
+
+        System.out.println(tester);
     }
 
     private static void testRemove() {
-        System.out.println("Testing remove method performance:");
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            concurrentSkipListMap.remove(value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeConcurrent = endTime - startTime;
+        System.out.print("Testing remove method performance: ");
 
-        startTime = System.currentTimeMillis();
-        for(Integer value : valuesToPut) {
-            skipListMap.remove(value);
-        }
-        endTime   = System.currentTimeMillis();
-        totalTimeMyList = endTime - startTime;
+        tester.testOneStart();
+        valuesToPut.forEach(concurrentSkipListMap::remove);
+        tester.testOneEnd();
 
-        percentage = totalTimeMyList - totalTimeConcurrent;
-        percentage /= totalTimeMyList;
-        percentage *= 100;
-        System.out.println(totalTimeConcurrent + ", " + totalTimeMyList + " -> " + percentage + "% \n");
+        tester.testTwoStart();
+        valuesToPut.forEach(skipListMap::remove);
+        tester.testTwoEnd();
+
+        System.out.println(tester);
     }
 
     private static void testHigherKey() {
-        System.out.println("Testing higherKey");
+        System.out.print("Testing higherKey: ");
         for(int i = 0; i < 99999; i++) {
             if(skipListMap.higherKey(i) != i + 1) {
                 System.out.println("HigherKey test not passed! \n");
@@ -129,6 +98,43 @@ public class Main {
             }
         }
         System.out.println("HigherKey test passed! \n");
+    }
+
+    private static class PerformanceComparisonTester {
+        long startTime1,
+                startTime2,
+                endTime1,
+                endTime2;
+
+        public void testOneStart() {
+            startTime1 = System.currentTimeMillis();
+        }
+
+        public void testOneEnd() {
+            endTime1 = System.currentTimeMillis();
+        }
+
+        public void testTwoStart() {
+            startTime2 = System.currentTimeMillis();
+        }
+
+        public void testTwoEnd() {
+            endTime2 = System.currentTimeMillis();
+        }
+
+        @Override
+        public String toString() {
+            long totalTime1 = endTime1 - startTime1,
+                    totalTime2 = endTime2 - startTime2;
+
+            double percentage;
+
+            percentage = totalTime2 - totalTime1;
+            percentage /= totalTime2;
+            percentage *= 100;
+
+            return totalTime1 + ", " + totalTime2 + " -> " + percentage + "% \n";
+        }
     }
 
     private static void test() {

@@ -266,6 +266,10 @@ public class SkipListMap implements Iterable<Integer> {
         return currentNode;
     }
 
+    public boolean containsKey(Integer key) {
+        return getNodeByKey(key) != null;
+    }
+
     @Override
     public String toString() {
         MapNode currentMandrelNode = mandrel;
