@@ -1,9 +1,9 @@
 import skiplist.SkipList;
 import skiplist.map.SkipListMap;
+import skiplist.map.SkipListMapProfilerTest;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
@@ -20,12 +20,13 @@ public class Main {
         Collections.shuffle(valuesToPut);
         testPut();
         testGet();
+        testContainsKey();
         testHigherKey();
         testRemove();
     }
 
-    static SkipListMap skipListMap = new SkipListMap();
-    static ConcurrentSkipListMap<Integer, Integer> concurrentSkipListMap = new ConcurrentSkipListMap();
+    static SkipListMapProfilerTest skipListMap = new SkipListMapProfilerTest();
+    static ConcurrentSkipListMap<Integer, Integer> concurrentSkipListMap = new ConcurrentSkipListMap<>();
     static ArrayList<Integer> valuesToPut = new ArrayList<>();
     static PerformanceComparisonTester tester = new PerformanceComparisonTester();
 
@@ -93,15 +94,15 @@ public class Main {
         System.out.print("Testing higherKey: ");
         for(int i = 0; i < 99999; i++) {
             if(skipListMap.higherKey(i) != i + 1) {
-                System.out.println("HigherKey test not passed! \n");
+                System.out.println("HigherKey test not passed!");
                 return;
             }
         }
-        System.out.println("HigherKey test passed! \n");
+        System.out.println("HigherKey test passed!");
     }
 
     private static class PerformanceComparisonTester {
-        long startTime1,
+        private long startTime1,
                 startTime2,
                 endTime1,
                 endTime2;
@@ -133,18 +134,11 @@ public class Main {
             percentage /= totalTime2;
             percentage *= 100;
 
-            return totalTime1 + ", " + totalTime2 + " -> " + percentage + "% \n";
+            return totalTime1 + ", " + totalTime2 + " -> " + percentage + "%";
         }
     }
 
     private static void test() {
-        Random randGenerator = new Random();
-//        System.out.println(randGenerator.nextInt(2));
-//        System.out.println(randGenerator.nextInt(2));
-//        System.out.println(randGenerator.nextInt(2));
-//        System.out.println(randGenerator.nextInt(2));
-//        System.out.println(randGenerator.nextInt(2));
-
         SkipList skipList1 = new SkipList();
 //        System.out.println(skipList1);
         skipList1.add(1);
