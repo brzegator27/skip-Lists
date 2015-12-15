@@ -1,6 +1,8 @@
 import skiplist.SkipList;
 import skiplist.map.SkipListMap;
+import skiplist.map.SkipListMapProfiler;
 import skiplist.map.SkipListMapProfilerTest;
+import skiplist.map.SkipListMapProfilerTest2;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +16,7 @@ public class Main {
         System.out.println("Testing SkipListMap");
 
 //        test();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < 10; i++) {
             valuesToPut.add(i);
         }
         Collections.shuffle(valuesToPut);
@@ -25,7 +27,7 @@ public class Main {
         testRemove();
     }
 
-    static SkipListMapProfilerTest skipListMap = new SkipListMapProfilerTest();
+    static SkipListMapProfiler skipListMap = new SkipListMapProfiler();
     static ConcurrentSkipListMap<Integer, Integer> concurrentSkipListMap = new ConcurrentSkipListMap<>();
     static ArrayList<Integer> valuesToPut = new ArrayList<>();
     static PerformanceComparisonTester tester = new PerformanceComparisonTester();
@@ -92,7 +94,7 @@ public class Main {
 
     private static void testHigherKey() {
         System.out.print("Testing higherKey: ");
-        for(int i = 0; i < 99999; i++) {
+        for(int i = 0; i < 9; i++) {
             if(skipListMap.higherKey(i) != i + 1) {
                 System.out.println("HigherKey test not passed!");
                 return;

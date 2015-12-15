@@ -1,0 +1,98 @@
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 23093 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 32502 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 6843 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 7270 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 10691 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 9836 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 14540 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 35068 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 10263 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: put 10264 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 28653 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 12830 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 6843 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 7698 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 8126 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 5988 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 10691 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 4277 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 4704 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: get 3421 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 9836 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 6414 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 7698 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 6842 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 8125 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 6415 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 7698 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 3849 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 17962 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: containsKey 3421 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 20528 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 4705 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 5560 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 5559 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 5988 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 6415 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 6415 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 6842 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: higherKey 5132 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 13685 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 5559 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 7271 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 3421 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 2994 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 4276 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 5132 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 5132 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 3421 ns
+gru 15, 2015 2:39:28 PM skiplist.map.SkipListMapProfiler$PerformanceComparisonTester doLog
+INFO: remove 2566 ns
